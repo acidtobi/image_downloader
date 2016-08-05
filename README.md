@@ -8,5 +8,5 @@ optional arguments:
   -h, --help            show this help message and exit
   -p PATH, --path PATH  path to store downloaded images in
   -f, --force           overwrite existing files
-  -r, --rename          rename existing downloaded file if file already exists
+  -r, --rename          rename downloaded file if file already exists locally
 ```

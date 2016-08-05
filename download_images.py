@@ -25,7 +25,7 @@ def download_image(url, path, mode):
 
     mode = 'default': skip file if it exists on local disk
     mode = 'force':   overwrite existing files
-    mode = 'rename':  rename downloaded file if file exists locally
+    mode = 'rename':  rename downloaded file if file already exists locally
     """
 
     ## append trailing slash to path
@@ -117,7 +117,7 @@ def main():
                                     help="overwrite existing files",
                                     action="store_true")
     overwrite_behavior.add_argument("-r", "--rename",
-                                    help="rename existing downloaded file if file already exists",
+                                    help="rename downloaded file if file already exists locally",
                                     action="store_true")
     args = parser.parse_args()
 
@@ -149,7 +149,7 @@ def main():
 
     ## mode = default: skip file if it exists on local disk
     ## mode = force: overwrite existing files
-    ## mode = rename: rename downloaded files if file exists locally
+    ## mode = rename: rename downloaded file if file already exists locally
     mode = 'default'
     if args.force:
         mode = 'force'
